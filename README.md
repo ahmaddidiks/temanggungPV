@@ -3,21 +3,26 @@ Alat otomatisasi panel surya projek Astra Green Energy di Temanggung
 
 Configuration :
 
-Connect pins :
-1. SDA to A4
-2. SCL to A
-3. VCC to 5V
-4. GND to GND
-5. Relay 1 to D2
-6. Relay 2 to D3
-7. Relay 3 to D4
-8. Relay 4 to D5
+1. **Connect Pins** \
+            SDA to A4\
+            SCL to A\
+            VCC to 5V\
+            GND to GND\
+            Relay 1 to D2\
+            Relay 2 to D3\
+            Relay 3 to D4\
+            Relay 4 to D5
 
 ![Gambar alat](pics/alat.jpeg) 	
 
 
-Instal the RTClib
+2. **Instal the RTClib**
 ![install lib](pics/rtclib.png)
 
+3. **Install Sodaq_DS3231 Lib, download file di folder lib**
 
-Setting RTC agar sesuai waktu sekarang [setting time](https://www.semesin.com/project/2018/05/09/seting-waktu-rtc-otomatis-dengan-arduino/)
+![sodaq](pics/sodaq.png)
+
+4. Upload program konfigurasi.ino yang ada di folder kalibrasi untuk kalibrasi waktu di RTC
+   
+5. Upload program code. Done
