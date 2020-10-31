@@ -12,10 +12,15 @@ unsigned int state;
 
 void setup () {
 
-digitalWrite(relay1, HIGH);
-digitalWrite(relay2, HIGH);
-digitalWrite(relay3, HIGH);
-digitalWrite(relay4, HIGH);   
+pinMode(relay1, OUTPUT);
+pinMode(relay2, OUTPUT);
+pinMode(relay3, OUTPUT);
+pinMode(relay4, OUTPUT);
+
+digitalWrite(relay1,HIGH);
+digitalWrite(relay2,HIGH);
+digitalWrite(relay3,HIGH);
+digitalWrite(relay4,HIGH);
 
   Serial.begin(9600);
   if (! rtc.begin()) {
@@ -55,16 +60,16 @@ void loop () {
     menit = now.minute();
 
     if (jam >= 18 || jam <=4) { //lampu nyala
-                                digitalWrite(relay1, LOW); state = 1;
+                                digitalWrite(relay1, LOW); state = 1; delay(2000);
                                 digitalWrite(relay2, LOW);
-                                digitalWrite(relay3, LOW);
+                                digitalWrite(relay3, LOW); delay(2000);
                                 digitalWrite(relay4, LOW);                
                               }
     else if (jam == 5) {
                         if (menit < 30) {
-                                        digitalWrite(relay1, LOW); state = 2;
+                                        digitalWrite(relay1, LOW); delay(2000); state = 2;
                                         digitalWrite(relay2, LOW);
-                                        digitalWrite(relay3, LOW);
+                                        digitalWrite(relay3, LOW); delay(2000);
                                         digitalWrite(relay4, LOW);   
                                         }
                         else if (menit >=30) {
@@ -75,10 +80,11 @@ void loop () {
                                               }
                        }
     else if (jam >=6 && jam <=18) {
-                                  digitalWrite(relay1, HIGH); state = 4;
+                                  state = 4; 
+                                  digitalWrite(relay1, HIGH); 
                                   digitalWrite(relay2, HIGH);
                                   digitalWrite(relay3, HIGH);
                                   digitalWrite(relay4, HIGH);   
                                   }
-delay(100);
+delay(3000);
 }
